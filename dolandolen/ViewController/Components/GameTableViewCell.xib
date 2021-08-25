@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="120" id="KGk-i7-Jjw" customClass="GameTableViewCell" customModule="dolandolen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDg-Ic-GVd">
+                        <rect key="frame" x="10" y="10" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="LDg-Ic-GVd" secondAttribute="height" multiplier="1:1" id="DPd-8n-I5A"/>
+                            <constraint firstAttribute="width" constant="100" id="eoV-4P-mcs"/>
+                            <constraint firstAttribute="height" constant="100" id="lvu-w3-ff1"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4n1-N3-zAA">
+                        <rect key="frame" x="120" y="10" width="190" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD6-cm-FlH">
+                        <rect key="frame" x="120" y="40.5" width="190" height="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xop-N0-9Le">
+                        <rect key="frame" x="120" y="95" width="190" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uD6-cm-FlH" firstAttribute="leading" secondItem="LDg-Ic-GVd" secondAttribute="trailing" constant="10" id="Evh-mH-MXe"/>
+                    <constraint firstAttribute="trailing" secondItem="uD6-cm-FlH" secondAttribute="trailing" constant="10" id="HQE-Hl-LIJ"/>
+                    <constraint firstItem="LDg-Ic-GVd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="T61-0k-h1w"/>
+                    <constraint firstAttribute="trailing" secondItem="xop-N0-9Le" secondAttribute="trailing" constant="10" id="Trw-Dr-U2Y"/>
+                    <constraint firstItem="xop-N0-9Le" firstAttribute="bottom" secondItem="LDg-Ic-GVd" secondAttribute="bottom" id="UMy-nP-7Qm"/>
+                    <constraint firstAttribute="bottom" secondItem="LDg-Ic-GVd" secondAttribute="bottom" constant="10" id="b4l-0j-kuT"/>
+                    <constraint firstItem="4n1-N3-zAA" firstAttribute="top" secondItem="LDg-Ic-GVd" secondAttribute="top" id="bY7-5J-TOs"/>
+                    <constraint firstItem="4n1-N3-zAA" firstAttribute="leading" secondItem="LDg-Ic-GVd" secondAttribute="trailing" constant="10" id="cwc-ma-9A0"/>
+                    <constraint firstItem="xop-N0-9Le" firstAttribute="leading" secondItem="LDg-Ic-GVd" secondAttribute="trailing" constant="10" id="dB8-RR-RdZ"/>
+                    <constraint firstItem="uD6-cm-FlH" firstAttribute="top" secondItem="4n1-N3-zAA" secondAttribute="bottom" constant="10" id="iEg-eN-eAQ"/>
+                    <constraint firstAttribute="trailing" secondItem="4n1-N3-zAA" secondAttribute="trailing" constant="10" id="u8x-cV-9Y1"/>
+                    <constraint firstItem="LDg-Ic-GVd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="wB1-mr-cN6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="gameImageView" destination="LDg-Ic-GVd" id="Qcs-1X-war"/>
+                <outlet property="gameReleaseText" destination="xop-N0-9Le" id="cKo-BM-dnf"/>
+                <outlet property="gameSubtitleText" destination="uD6-cm-FlH" id="hsT-E9-Wme"/>
+                <outlet property="gameTitleText" destination="4n1-N3-zAA" id="xbW-8W-s92"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="104"/>
+        </tableViewCell>
+    </objects>
+</document>
