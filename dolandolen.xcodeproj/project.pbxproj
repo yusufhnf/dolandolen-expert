@@ -17,6 +17,10 @@
 		ED5DE80226CEAF1800AABD8D /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DE80126CEAF1800AABD8D /* GameDetailModel.swift */; };
 		ED5DE80426CEAFED00AABD8D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DE80326CEAFED00AABD8D /* HomeViewModel.swift */; };
 		ED5DE80926CEB1CA00AABD8D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ED5DE80826CEB1CA00AABD8D /* Kingfisher */; };
+		ED6F837E26D6FA640023F50E /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F837D26D6FA640023F50E /* FavoritesViewModel.swift */; };
+		ED6F838026D6FA970023F50E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F837F26D6FA970023F50E /* FavoritesViewController.swift */; };
+		ED6F838726D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED6F838526D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld */; };
+		ED6F838926D6FC740023F50E /* GameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F838826D6FC740023F50E /* GameProvider.swift */; };
 		ED8C743326C40B810075DE4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C743226C40B810075DE4E /* AppDelegate.swift */; };
 		ED8C743526C40B810075DE4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C743426C40B810075DE4E /* SceneDelegate.swift */; };
 		ED8C743D26C40B810075DE4E /* dolandolen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED8C743B26C40B810075DE4E /* dolandolen.xcdatamodeld */; };
@@ -62,6 +66,10 @@
 		ED5DE7FF26CEAEBB00AABD8D /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		ED5DE80126CEAF1800AABD8D /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		ED5DE80326CEAFED00AABD8D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		ED6F837D26D6FA640023F50E /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		ED6F837F26D6FA970023F50E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		ED6F838626D6FBD90023F50E /* GameCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		ED6F838826D6FC740023F50E /* GameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProvider.swift; sourceTree = "<group>"; };
 		ED8C742F26C40B810075DE4E /* dolandolen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dolandolen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8C743226C40B810075DE4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8C743426C40B810075DE4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +130,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		ED6F838126D6FB0B0023F50E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				ED6F838526D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld */,
+				ED6F838826D6FC740023F50E /* GameProvider.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		ED8C742626C40B810075DE4E = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +162,7 @@
 		ED8C743126C40B810075DE4E /* dolandolen */ = {
 			isa = PBXGroup;
 			children = (
+				ED6F838126D6FB0B0023F50E /* CoreData */,
 				EDF9DB1B26D4ED5F006814A1 /* Utils */,
 				EDA0094226C80D7100708355 /* Network */,
 				ED8C746826C4100D0075DE4E /* Model */,
@@ -196,6 +214,7 @@
 				EDA9CE0A26D24AD600C416F7 /* DetailViewController.swift */,
 				EDA9CE0B26D24AD600C416F7 /* DetailViewController.xib */,
 				ED1A0D7926D3BD400044B77B /* SearchViewController.swift */,
+				ED6F837F26D6FA970023F50E /* FavoritesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -206,6 +225,7 @@
 				ED5DE80326CEAFED00AABD8D /* HomeViewModel.swift */,
 				ED1B409F26CFE6DE000C0157 /* DetailViewModel.swift */,
 				ED1A0D7726D3BC9B0044B77B /* SearchViewModel.swift */,
+				ED6F837D26D6FA640023F50E /* FavoritesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -410,9 +430,13 @@
 				ED5DE80426CEAFED00AABD8D /* HomeViewModel.swift in Sources */,
 				EDA0094626C80DAA00708355 /* NetworkMonitor.swift in Sources */,
 				ED5DE7FE26CEACB100AABD8D /* ActivityIndicator.swift in Sources */,
+				ED6F837E26D6FA640023F50E /* FavoritesViewModel.swift in Sources */,
+				ED6F838026D6FA970023F50E /* FavoritesViewController.swift in Sources */,
 				EDC6F57626CF9681006F2327 /* NetworkErrorHandling.swift in Sources */,
+				ED6F838726D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld in Sources */,
 				ED8C743D26C40B810075DE4E /* dolandolen.xcdatamodeld in Sources */,
 				EDF9DB1D26D4ED6D006814A1 /* Utils.swift in Sources */,
+				ED6F838926D6FC740023F50E /* GameProvider.swift in Sources */,
 				ED5DE80026CEAEBB00AABD8D /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,6 +783,16 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
+		ED6F838526D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED6F838626D6FBD90023F50E /* GameCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = ED6F838626D6FBD90023F50E /* GameCoreDataModel.xcdatamodel */;
+			path = GameCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		ED8C743B26C40B810075DE4E /* dolandolen.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
