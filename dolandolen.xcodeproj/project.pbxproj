@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0ECB5D26D727BC0053F21A /* EditAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB5C26D727BC0053F21A /* EditAboutViewController.swift */; };
+		ED0ECB5F26D73BF50053F21A /* EditAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB5E26D73BF50053F21A /* EditAboutViewModel.swift */; };
+		ED0ECB6226D74A2C0053F21A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = ED0ECB6126D74A2C0053F21A /* Toast */; };
+		ED0ECB6426D761560053F21A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB6326D761560053F21A /* Formatter.swift */; };
 		ED1A0D7826D3BC9B0044B77B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0D7726D3BC9B0044B77B /* SearchViewModel.swift */; };
 		ED1A0D7A26D3BD400044B77B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0D7926D3BD400044B77B /* SearchViewController.swift */; };
 		ED1B40A026CFE6DE000C0157 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B409F26CFE6DE000C0157 /* DetailViewModel.swift */; };
@@ -21,6 +25,7 @@
 		ED6F838026D6FA970023F50E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F837F26D6FA970023F50E /* FavoritesViewController.swift */; };
 		ED6F838726D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED6F838526D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld */; };
 		ED6F838926D6FC740023F50E /* GameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F838826D6FC740023F50E /* GameProvider.swift */; };
+		ED6F838B26D6FEA30023F50E /* GameFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F838A26D6FEA30023F50E /* GameFavoriteModel.swift */; };
 		ED8C743326C40B810075DE4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C743226C40B810075DE4E /* AppDelegate.swift */; };
 		ED8C743526C40B810075DE4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C743426C40B810075DE4E /* SceneDelegate.swift */; };
 		ED8C743D26C40B810075DE4E /* dolandolen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED8C743B26C40B810075DE4E /* dolandolen.xcdatamodeld */; };
@@ -57,6 +62,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED0ECB5C26D727BC0053F21A /* EditAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutViewController.swift; sourceTree = "<group>"; };
+		ED0ECB5E26D73BF50053F21A /* EditAboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutViewModel.swift; sourceTree = "<group>"; };
+		ED0ECB6326D761560053F21A /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		ED1A0D7726D3BC9B0044B77B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		ED1A0D7926D3BD400044B77B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ED1B409F26CFE6DE000C0157 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -70,6 +78,7 @@
 		ED6F837F26D6FA970023F50E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		ED6F838626D6FBD90023F50E /* GameCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		ED6F838826D6FC740023F50E /* GameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProvider.swift; sourceTree = "<group>"; };
+		ED6F838A26D6FEA30023F50E /* GameFavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoriteModel.swift; sourceTree = "<group>"; };
 		ED8C742F26C40B810075DE4E /* dolandolen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dolandolen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8C743226C40B810075DE4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8C743426C40B810075DE4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0ECB6226D74A2C0053F21A /* Toast in Frameworks */,
 				ED5DE80926CEB1CA00AABD8D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +225,7 @@
 				EDA9CE0B26D24AD600C416F7 /* DetailViewController.xib */,
 				ED1A0D7926D3BD400044B77B /* SearchViewController.swift */,
 				ED6F837F26D6FA970023F50E /* FavoritesViewController.swift */,
+				ED0ECB5C26D727BC0053F21A /* EditAboutViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -226,6 +237,7 @@
 				ED1B409F26CFE6DE000C0157 /* DetailViewModel.swift */,
 				ED1A0D7726D3BC9B0044B77B /* SearchViewModel.swift */,
 				ED6F837D26D6FA640023F50E /* FavoritesViewModel.swift */,
+				ED0ECB5E26D73BF50053F21A /* EditAboutViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -235,6 +247,7 @@
 			children = (
 				ED5DE7FF26CEAEBB00AABD8D /* GameModel.swift */,
 				ED5DE80126CEAF1800AABD8D /* GameDetailModel.swift */,
+				ED6F838A26D6FEA30023F50E /* GameFavoriteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF9DB1C26D4ED6D006814A1 /* Utils.swift */,
+				ED0ECB6326D761560053F21A /* Formatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 			name = dolandolen;
 			packageProductDependencies = (
 				ED5DE80826CEB1CA00AABD8D /* Kingfisher */,
+				ED0ECB6126D74A2C0053F21A /* Toast */,
 			);
 			productName = dolandolen;
 			productReference = ED8C742F26C40B810075DE4E /* dolandolen.app */;
@@ -350,6 +365,7 @@
 			mainGroup = ED8C742626C40B810075DE4E;
 			packageReferences = (
 				ED5DE80726CEB1CA00AABD8D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				ED0ECB6026D74A2C0053F21A /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = ED8C743026C40B810075DE4E /* Products */;
 			projectDirPath = "";
@@ -416,10 +432,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED1B40A026CFE6DE000C0157 /* DetailViewModel.swift in Sources */,
+				ED0ECB5D26D727BC0053F21A /* EditAboutViewController.swift in Sources */,
 				ED8C746C26C410AD0075DE4E /* AboutViewController.swift in Sources */,
+				ED0ECB6426D761560053F21A /* Formatter.swift in Sources */,
 				ED8C746A26C410440075DE4E /* TabbarViewController.swift in Sources */,
 				ED5DE80226CEAF1800AABD8D /* GameDetailModel.swift in Sources */,
 				ED1A0D7826D3BC9B0044B77B /* SearchViewModel.swift in Sources */,
+				ED0ECB5F26D73BF50053F21A /* EditAboutViewModel.swift in Sources */,
+				ED6F838B26D6FEA30023F50E /* GameFavoriteModel.swift in Sources */,
 				ED5DE7F926CEAA6600AABD8D /* GameTableViewCell.swift in Sources */,
 				EDA0094426C80D9000708355 /* APIServices.swift in Sources */,
 				ED8C743326C40B810075DE4E /* AppDelegate.swift in Sources */,
@@ -764,6 +784,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		ED0ECB6026D74A2C0053F21A /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		ED5DE80726CEB1CA00AABD8D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -775,6 +803,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		ED0ECB6126D74A2C0053F21A /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED0ECB6026D74A2C0053F21A /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		ED5DE80826CEB1CA00AABD8D /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ED5DE80726CEB1CA00AABD8D /* XCRemoteSwiftPackageReference "Kingfisher" */;

@@ -8,13 +8,12 @@
 import UIKit
 import Kingfisher
 
-class HomeViewController: UIViewController, UISearchBarDelegate {
+class HomeViewController: UIViewController {
     private let viewModel = HomeViewModel()
     private let gameTable = UITableView()
     var timer: Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableConfig()
         view.addSubview(gameTable)
         setupTableView()
         setupNavigationBar()
@@ -52,12 +51,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "DolanDolen"
     }
-    private func setupTableConfig() {
+    private func setupTableView() {
         gameTable.dataSource = self
         gameTable.delegate = self
         gameTable.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
-    }
-    private func setupTableView() {
         gameTable.translatesAutoresizingMaskIntoConstraints = false
         gameTable.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         gameTable.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -85,9 +82,10 @@ extension HomeViewController: UITableViewDataSource {
         let gameCell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
             as? GameTableViewCell ?? GameTableViewCell()
         let gameData = viewModel.gameResult[indexPath.row]
+        let formatter = Formatter()
         gameCell.gameTitleText.text = gameData.name
         gameCell.gameSubtitleText.text = "⭐️ \(gameData.rating)"
-        gameCell.gameReleaseText.text = "🗓 \(gameData.dateText)"
+        gameCell.gameReleaseText.text = "🗓 \(formatter.dateFormatter(dateValue: gameData.released))"
         gameCell.gameImageView.kf.setImage(with: URL(string: gameData.backgroundImage ?? ""),
                                            placeholder: UIImage(named: "placeholder"))
         return gameCell

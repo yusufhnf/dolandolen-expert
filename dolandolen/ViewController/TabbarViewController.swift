@@ -29,8 +29,15 @@ class TabbarViewController: UITabBarController {
         viewController.tabBarItem = UITabBarItem(title: "Cari", image: image, selectedImage: selectedImage)
         return UINavigationController(rootViewController: viewController)
     }()
+    private lazy var favourites: UIViewController = {
+        let viewController = FavoritesViewController()
+        let image = UIImage(systemName: "heart.text.square")
+        let selectedImage = UIImage(systemName: "heart.text.square.fill")
+        viewController.tabBarItem = UITabBarItem(title: "Favorit", image: image, selectedImage: selectedImage)
+        return UINavigationController(rootViewController: viewController)
+    }()
     private func setupTabBar() {
-        self.viewControllers = [home, search, about]
+        self.viewControllers = [home, search, favourites, about]
     }
     override func viewDidLoad() {
         super.viewDidLoad()

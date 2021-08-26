@@ -56,7 +56,21 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Tentang"
     }
+    override func viewWillLayoutSubviews() {
+        addEditNavigationItem()
+    }
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
+    }
+    private func addEditNavigationItem() {
+        let editButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.edit,
+                                             target: self, action: #selector(navigateToEdit(_:)))
+        navigationItem.rightBarButtonItem = editButtonItem
+    }
+    @objc func navigateToEdit(_ sender: UIBarButtonItem!) {
+        let editAboutVC = EditAboutViewController()
+        let navigationController = UINavigationController(rootViewController: editAboutVC)
+        navigationController.modalPresentationStyle = .automatic
+        present(navigationController, animated: true)
     }
 }

@@ -30,15 +30,4 @@ struct ResultGame: Codable {
         case rating
         case idGame = "id"
     }
-    static private let dateTextFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, dd MMMM yyyy"
-        return formatter
-    }()
-    var dateText: String {
-        guard let releaseDate = released, let date = Utils.dateFormatter.date(from: releaseDate) else {
-            return "n/a"
-        }
-        return ResultGame.dateTextFormatter.string(from: date)
-    }
 }
