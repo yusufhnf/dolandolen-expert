@@ -40,6 +40,7 @@ class GameProvider {
                                                       description: result.value(forKey: "desc") as? String,
                                                       backgroundImage: result.value(forKey: "backgroundImage") as? String,
                                                       rating: result.value(forKey: "rating") as? Double,
+                                                      ratingTop: result.value(forKey: "ratingTop") as? Int32,
                                                       releaseDate: result.value(forKey: "releaseDate") as? String)
                     games.append(gamesData)
                 }
@@ -62,6 +63,7 @@ class GameProvider {
                                                      description: result.value(forKey: "desc") as? String,
                                                      backgroundImage: result.value(forKey: "backgroundImage") as? String,
                                                      rating: result.value(forKey: "rating") as? Double,
+                                                     ratingTop: result.value(forKey: "ratingTop") as? Int32,
                                                      releaseDate: result.value(forKey: "releaseDate") as? String)
                     completion(gameData)
                 }
@@ -81,6 +83,7 @@ class GameProvider {
                 game.setValue(gameData.backgroundImage, forKey: "backgroundImage")
                 game.setValue(gameData.releaseDate, forKey: "releaseDate")
                 game.setValue(gameData.description, forKey: "desc")
+                game.setValue(gameData.ratingTop, forKey: "ratingTop")
                 do {
                     try taskContext.save()
                     completion()

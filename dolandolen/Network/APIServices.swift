@@ -8,7 +8,7 @@
 import Foundation
 
 class APIServices {
-    private let apiKey = "INSERT_API_KEY_HERE"
+    private let apiKey = "INSERT_API_KEY"
     private let baseURL = "https://api.rawg.io/api"
     private var dataTask: URLSessionTask?
     func fetchGamesData(completion: @escaping (Result<GameModel, Error>) -> Void) {

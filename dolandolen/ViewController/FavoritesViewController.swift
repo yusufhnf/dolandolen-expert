@@ -42,9 +42,7 @@ class FavoritesViewController: UIViewController {
     }
     private func updateTableUI() {
         DispatchQueue.main.async {
-            if !self.viewModel.gameFavouritesResult.isEmpty {
-                self.favouriteTable.isHidden = false
-            }
+            self.favouriteTable.isHidden = false
             self.favouriteTable.reloadData()
         }
     }

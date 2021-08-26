@@ -13,5 +13,6 @@ struct GameFavoriteModel {
     var description: String?
     var backgroundImage: String?
     var rating: Double?
+    var ratingTop: Int32?
     var releaseDate: String?
 }

@@ -21,6 +21,7 @@ struct ResultGame: Codable {
     let name: String
     let backgroundImage: String?
     let rating: Double
+    let ratingTop: Int?
     let idGame: Int
     let released: String?
 
@@ -29,5 +30,6 @@ struct ResultGame: Codable {
         case backgroundImage = "background_image"
         case rating
         case idGame = "id"
+        case ratingTop = "rating_top"
     }
 }

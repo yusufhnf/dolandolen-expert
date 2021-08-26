@@ -5,7 +5,6 @@
 //  Created by Yusuf Umar Hanafi on 19/08/21.
 //
 
-import Foundation
 import UIKit
 
 private var activityIndicatorPage: UIView?

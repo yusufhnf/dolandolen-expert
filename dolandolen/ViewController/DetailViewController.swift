@@ -96,11 +96,13 @@ class DetailViewController: UIViewController {
         let releaseDate = viewModel.gameDetailResult?.released ?? ""
         let description = viewModel.gameDetailResult?.gameDetailModelDescription ?? ""
         let image = viewModel.gameDetailResult?.backgroundImage ?? ""
+        let ratingTop = viewModel.gameDetailResult?.ratingTop ?? 0
         gameProvider.addFavouriteGame(gameData: GameFavoriteModel(idGame: Int32(idGame),
                                                                   name: name,
                                                                   description: description,
                                                                   backgroundImage: image,
                                                                   rating: rating,
+                                                                  ratingTop: Int32(ratingTop),
                                                                   releaseDate: releaseDate)) {
             DispatchQueue.main.async {
                 self.view.makeToast("berhasil menambahkan ke daftar favorit")

@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		ED0ECB5D26D727BC0053F21A /* EditAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB5C26D727BC0053F21A /* EditAboutViewController.swift */; };
-		ED0ECB5F26D73BF50053F21A /* EditAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB5E26D73BF50053F21A /* EditAboutViewModel.swift */; };
 		ED0ECB6226D74A2C0053F21A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = ED0ECB6126D74A2C0053F21A /* Toast */; };
 		ED0ECB6426D761560053F21A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB6326D761560053F21A /* Formatter.swift */; };
+		ED0ECB6626D77E960053F21A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB6526D77E960053F21A /* UserModel.swift */; };
 		ED1A0D7826D3BC9B0044B77B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0D7726D3BC9B0044B77B /* SearchViewModel.swift */; };
 		ED1A0D7A26D3BD400044B77B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0D7926D3BD400044B77B /* SearchViewController.swift */; };
 		ED1B40A026CFE6DE000C0157 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B409F26CFE6DE000C0157 /* DetailViewModel.swift */; };
@@ -63,8 +63,8 @@
 
 /* Begin PBXFileReference section */
 		ED0ECB5C26D727BC0053F21A /* EditAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutViewController.swift; sourceTree = "<group>"; };
-		ED0ECB5E26D73BF50053F21A /* EditAboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutViewModel.swift; sourceTree = "<group>"; };
 		ED0ECB6326D761560053F21A /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		ED0ECB6526D77E960053F21A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		ED1A0D7726D3BC9B0044B77B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		ED1A0D7926D3BD400044B77B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ED1B409F26CFE6DE000C0157 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -237,7 +237,6 @@
 				ED1B409F26CFE6DE000C0157 /* DetailViewModel.swift */,
 				ED1A0D7726D3BC9B0044B77B /* SearchViewModel.swift */,
 				ED6F837D26D6FA640023F50E /* FavoritesViewModel.swift */,
-				ED0ECB5E26D73BF50053F21A /* EditAboutViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,6 +247,7 @@
 				ED5DE7FF26CEAEBB00AABD8D /* GameModel.swift */,
 				ED5DE80126CEAF1800AABD8D /* GameDetailModel.swift */,
 				ED6F838A26D6FEA30023F50E /* GameFavoriteModel.swift */,
+				ED0ECB6526D77E960053F21A /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -438,7 +438,6 @@
 				ED8C746A26C410440075DE4E /* TabbarViewController.swift in Sources */,
 				ED5DE80226CEAF1800AABD8D /* GameDetailModel.swift in Sources */,
 				ED1A0D7826D3BC9B0044B77B /* SearchViewModel.swift in Sources */,
-				ED0ECB5F26D73BF50053F21A /* EditAboutViewModel.swift in Sources */,
 				ED6F838B26D6FEA30023F50E /* GameFavoriteModel.swift in Sources */,
 				ED5DE7F926CEAA6600AABD8D /* GameTableViewCell.swift in Sources */,
 				EDA0094426C80D9000708355 /* APIServices.swift in Sources */,
@@ -453,6 +452,7 @@
 				ED6F837E26D6FA640023F50E /* FavoritesViewModel.swift in Sources */,
 				ED6F838026D6FA970023F50E /* FavoritesViewController.swift in Sources */,
 				EDC6F57626CF9681006F2327 /* NetworkErrorHandling.swift in Sources */,
+				ED0ECB6626D77E960053F21A /* UserModel.swift in Sources */,
 				ED6F838726D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld in Sources */,
 				ED8C743D26C40B810075DE4E /* dolandolen.xcdatamodeld in Sources */,
 				EDF9DB1D26D4ED6D006814A1 /* Utils.swift in Sources */,
