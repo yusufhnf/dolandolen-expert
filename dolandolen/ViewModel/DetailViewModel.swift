@@ -10,6 +10,7 @@ import Foundation
 class DetailViewModel {
     private let apiService: APIServices
     var gameDetailResult: GameDetailModel?
+    var isFavourited: Bool = false
     init(apiService: APIServices = APIServices()) {
         self.apiService = apiService
     }

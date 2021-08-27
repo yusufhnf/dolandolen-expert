@@ -99,11 +99,12 @@ extension SearchViewController: UITableViewDataSource {
         let gameCell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
             as? GameTableViewCell ?? GameTableViewCell()
         let gameData = viewModel.gameSearchResult[indexPath.row]
+        let formatter = Formatter()
         gameCell.gameTitleText.text = gameData.name
         gameCell.gameSubtitleText.text = "⭐️ \(gameData.rating)"
         gameCell.gameImageView.kf.setImage(with: URL(string: gameData.backgroundImage ?? ""),
                                            placeholder: UIImage(named: "placeholder"))
-        gameCell.gameReleaseText.text = "🗓 \(gameData.dateText)"
+        gameCell.gameReleaseText.text = "🗓 \(formatter.dateFormatter(dateValue: gameData.released))"
         return gameCell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

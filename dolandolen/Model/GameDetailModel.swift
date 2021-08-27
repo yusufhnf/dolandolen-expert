@@ -13,6 +13,7 @@ struct GameDetailModel: Codable {
     let name, gameDetailModelDescription: String
     let backgroundImage: String?
     let rating: Double
+    let ratingTop: Int?
     let released: String?
 
     enum CodingKeys: String, CodingKey {
@@ -21,5 +22,6 @@ struct GameDetailModel: Codable {
         case gameDetailModelDescription = "description_raw"
         case backgroundImage = "background_image"
         case rating
+        case ratingTop = "rating_top"
     }
 }

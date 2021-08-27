@@ -30,6 +30,7 @@ class AboutViewController: UIViewController {
     private lazy var authorInfoText: UILabel = {
         let authorText = UILabel()
         authorText.text = "iOS Developer | Apple Developer Academy"
+        authorText.numberOfLines = 3
         authorText.textAlignment = .center
         authorText.font = .systemFont(ofSize: 14, weight: .regular)
         authorText.textColor = UIColor(red: 130/255, green: 131/255, blue: 134/255, alpha: 1)
@@ -54,9 +55,35 @@ class AboutViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataManager.shared.aboutVC = self
         self.navigationItem.title = "Tentang"
     }
+    override func viewWillLayoutSubviews() {
+        addEditNavigationItem()
+    }
     override func viewWillAppear(_ animated: Bool) {
+        loadUserModel()
         tabBarController?.tabBar.isHidden = false
     }
+    func loadUserModel() {
+        UserModel.synchronize()
+        authorNameText.text = UserModel.name
+        authorInfoText.text = UserModel.desc
+    }
+    private func addEditNavigationItem() {
+        let editButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.edit,
+                                             target: self, action: #selector(navigateToEdit(_:)))
+        navigationItem.rightBarButtonItem = editButtonItem
+    }
+    @objc func navigateToEdit(_ sender: UIBarButtonItem!) {
+        let editAboutVC = EditAboutViewController()
+        let navigationController = UINavigationController(rootViewController: editAboutVC)
+        navigationController.modalPresentationStyle = .automatic
+        present(navigationController, animated: true)
+    }
+}
+
+class DataManager {
+    static let shared = DataManager()
+    var aboutVC = AboutViewController()
 }

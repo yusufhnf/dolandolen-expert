@@ -21,6 +21,7 @@ struct ResultGame: Codable {
     let name: String
     let backgroundImage: String?
     let rating: Double
+    let ratingTop: Int?
     let idGame: Int
     let released: String?
 
@@ -29,16 +30,6 @@ struct ResultGame: Codable {
         case backgroundImage = "background_image"
         case rating
         case idGame = "id"
-    }
-    static private let dateTextFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, dd MMMM yyyy"
-        return formatter
-    }()
-    var dateText: String {
-        guard let releaseDate = released, let date = Utils.dateFormatter.date(from: releaseDate) else {
-            return "n/a"
-        }
-        return ResultGame.dateTextFormatter.string(from: date)
+        case ratingTop = "rating_top"
     }
 }
