@@ -9,14 +9,14 @@ import Foundation
 import RxSwift
 
 protocol FavouriteUseCase {
-    func getFavouritesData() -> Observable<[GameFavoriteModel]>
+    func getFavouritesData() -> Observable<[GameModel]>
 }
 class FavouriteInteractor: FavouriteUseCase {
     private let favouriteRepository: FavouriteRepository
     required init(favouriteRepository: FavouriteRepository) {
         self.favouriteRepository = favouriteRepository
     }
-    func getFavouritesData() -> Observable<[GameFavoriteModel]> {
+    func getFavouritesData() -> Observable<[GameModel]> {
         return self.favouriteRepository.getFavouritesData()
     }
 }

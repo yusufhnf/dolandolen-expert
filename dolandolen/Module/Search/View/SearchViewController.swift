@@ -15,7 +15,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     var timer: Timer?
     var searchPresenter: SearchPresenter?
     var disposeBag = DisposeBag()
-    var gameResult = [ResultGame]()
+    var gameResult = [GameModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableConfig()
@@ -110,12 +110,11 @@ extension SearchViewController: UITableViewDataSource {
         let gameCell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
         as? GameTableViewCell ?? GameTableViewCell()
         let gameData = self.gameResult[indexPath.row]
-        let formatter = Formatter()
         gameCell.gameTitleText.text = gameData.name
         gameCell.gameSubtitleText.text = "⭐️ \(gameData.rating)"
         gameCell.gameImageView.kf.setImage(with: URL(string: gameData.backgroundImage ?? ""),
                                            placeholder: UIImage(named: "placeholder"))
-        gameCell.gameReleaseText.text = "🗓 \(formatter.dateFormatter(dateValue: gameData.released))"
+        gameCell.gameReleaseText.text = "🗓 \(gameData.releasedDateText)"
         return gameCell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

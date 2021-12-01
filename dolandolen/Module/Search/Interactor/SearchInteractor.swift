@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol SearchUseCase {
-    func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[ResultGame]>
+    func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[GameModel]>
 }
 
 class SearchInteractor: SearchUseCase {
@@ -17,7 +17,7 @@ class SearchInteractor: SearchUseCase {
     required init(gameRepository: GameRepository) {
         self.gameRepository = gameRepository
     }
-    func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[ResultGame]> {
+    func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[GameModel]> {
         return self.gameRepository.fetchGamesDataSearch(searchKeyword: searchKeyword)
     }
 }

@@ -11,5 +11,5 @@ import RxSwift
 protocol GameRemoteData: AnyObject {
     func fetchGamesData() -> Observable<[ResultGame]>
     func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[ResultGame]>
-    func fetchGameDetail(idGame: Int) -> Observable<GameDetailModel>
+    func fetchGameDetail(idGame: Int) -> Observable<GameDetailResponse>
 }

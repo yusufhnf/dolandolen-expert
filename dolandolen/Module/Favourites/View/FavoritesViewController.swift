@@ -11,7 +11,7 @@ import RxSwift
 class FavoritesViewController: UIViewController {
     var favouritePresenter: FavouritePresenter?
     var disposeBag = DisposeBag()
-    var gameFavouritesResult = [GameFavoriteModel]()
+    var gameFavouritesResult = [GameModel]()
     private var favouriteTable = UITableView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,10 +68,9 @@ extension FavoritesViewController: UITableViewDataSource {
         let gameCell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
         as? GameTableViewCell ?? GameTableViewCell()
         let gameData = self.gameFavouritesResult[indexPath.row]
-        let formatter = Formatter()
         gameCell.gameTitleText.text = gameData.name
-        gameCell.gameSubtitleText.text = "⭐️ \(gameData.rating ?? 0.0)"
-        gameCell.gameReleaseText.text = "🗓 \(formatter.dateFormatter(dateValue: gameData.releaseDate))"
+        gameCell.gameSubtitleText.text = "⭐️ \(gameData.rating)"
+        gameCell.gameReleaseText.text = "🗓 \(gameData.releasedDateText)"
         gameCell.gameImageView.kf.setImage(with: URL(string: gameData.backgroundImage ?? ""),
                                            placeholder: UIImage(named: "placeholder"))
         return gameCell
@@ -79,6 +78,6 @@ extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         favouritePresenter?.navigateToDetail(navigationController: self.navigationController,
-                                        idGame: Int(self.gameFavouritesResult[indexPath.row].idGame ?? 0))
+                                        idGame: Int(self.gameFavouritesResult[indexPath.row].idGame))
     }
 }

@@ -16,7 +16,7 @@ class GameRemoteDataImpl: GameRemoteData {
                 let parameters = ["key": API.apiKey]
                 AF.request(url, parameters: parameters)
                     .validate()
-                    .responseDecodable(of: GameModel.self) { response in
+                    .responseDecodable(of: GameResponse.self) { response in
                         switch response.result {
                         case .success(let value):
                             observer.onNext(value.results)
@@ -38,7 +38,7 @@ class GameRemoteDataImpl: GameRemoteData {
                 }
                 AF.request(url, parameters: parameters)
                     .validate()
-                    .responseDecodable(of: GameModel.self) { response in
+                    .responseDecodable(of: GameResponse.self) { response in
                         switch response.result {
                         case .success(let value):
                             observer.onNext(value.results)
@@ -51,13 +51,13 @@ class GameRemoteDataImpl: GameRemoteData {
             return Disposables.create()
         }
     }
-    func fetchGameDetail(idGame: Int) -> Observable<GameDetailModel> {
-        return Observable<GameDetailModel>.create {observer in
+    func fetchGameDetail(idGame: Int) -> Observable<GameDetailResponse> {
+        return Observable<GameDetailResponse>.create {observer in
             if let url = URL(string: "\(Endpoints.Gets.gameDetail.url)\(idGame)") {
                 let parameter = ["key": API.apiKey]
                 AF.request(url, parameters: parameter)
                     .validate()
-                    .responseDecodable(of: GameDetailModel.self) { response in
+                    .responseDecodable(of: GameDetailResponse.self) { response in
                         switch response.result {
                         case .success(let value):
                             observer.onNext(value)

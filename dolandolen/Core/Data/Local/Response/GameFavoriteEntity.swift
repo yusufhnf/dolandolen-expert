@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameFavoriteModel {
+struct GameFavoriteEntity {
     var idGame: Int32?
     var name: String?
     var description: String?

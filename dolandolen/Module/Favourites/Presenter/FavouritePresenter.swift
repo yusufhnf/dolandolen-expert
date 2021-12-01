@@ -12,22 +12,19 @@ class FavouritePresenter {
     private let disposeBag = DisposeBag()
     private let router = FavouriteRouter()
     private let favouriteUseCase: FavouriteUseCase
-    var gamesFavouriteData = PublishSubject<[GameFavoriteModel]>()
+    var gamesFavouriteData = PublishSubject<[GameModel]>()
     var errorMessage = PublishSubject<String>()
     var activityIndicator = PublishSubject<Bool>()
     init(favouriteUseCase: FavouriteUseCase) {
         self.favouriteUseCase = favouriteUseCase
     }
     func getFavouriteGame() {
-        self.activityIndicator.onNext(true)
         favouriteUseCase.getFavouritesData()
             .observe(on: MainScheduler.instance)
             .subscribe { result in
                 self.gamesFavouriteData.onNext(result)
             } onError: { error in
                 self.errorMessage.onNext(error.localizedDescription)
-            } onCompleted: {
-                self.activityIndicator.onNext(false)
             }.disposed(by: disposeBag)
     }
     func navigateToDetail(navigationController: UINavigationController?, idGame: Int) {

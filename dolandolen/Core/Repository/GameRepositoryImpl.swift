@@ -13,16 +13,19 @@ class GameRepositoryImpl: GameRepository {
     init(remoteData: GameRemoteData) {
         self.gameRemoteData = remoteData
     }
-    func fetchGamesData() -> Observable<[ResultGame]> {
+    func fetchGamesData() -> Observable<[GameModel]> {
         return gameRemoteData
             .fetchGamesData()
+            .map {GameMapper.mapGameResponseToDomain(input: $0)}
     }
-    func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[ResultGame]> {
+    func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[GameModel]> {
         return gameRemoteData
             .fetchGamesDataSearch(searchKeyword: searchKeyword)
+            .map {GameMapper.mapGameResponseToDomain(input: $0)}
     }
     func fetchGameDetail(idGame: Int) -> Observable<GameDetailModel> {
         return gameRemoteData
             .fetchGameDetail(idGame: idGame)
+            .map {GameMapper.mapGameDetailResponseToDomain(input: $0)}
     }
 }

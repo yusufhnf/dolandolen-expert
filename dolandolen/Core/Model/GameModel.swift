@@ -2,34 +2,22 @@
 //  GameModel.swift
 //  dolandolen
 //
-//  Created by Yusuf Umar Hanafi on 19/08/21.
+//  Created by Yusuf Umar Hanafi on 02/12/21.
 //
 
 import Foundation
 
-// MARK: - GameModel
-struct GameModel: Codable {
-    let results: [ResultGame]
-
-    enum CodingKeys: String, CodingKey {
-        case results
-    }
-}
-
-// MARK: - Result
-struct ResultGame: Codable {
+struct GameModel {
     let name: String
     let backgroundImage: String?
     let rating: Double
     let ratingTop: Int?
     let idGame: Int
     let released: String?
-
-    enum CodingKeys: String, CodingKey {
-        case name, released
-        case backgroundImage = "background_image"
-        case rating
-        case idGame = "id"
-        case ratingTop = "rating_top"
+    var releasedDateText: String {
+        guard let releaseDate = released, let date = DateTimeUtils.dateFormatter.date(from: releaseDate) else {
+            return "n/a"
+        }
+        return DateTimeUtils.dateTextFormatter.string(from: date)
     }
 }

@@ -65,9 +65,9 @@ class AboutViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
     func loadUserModel() {
-        UserModel.synchronize()
-        authorNameText.text = UserModel.name
-        authorInfoText.text = UserModel.desc
+        UserEntity.synchronize()
+        authorNameText.text = UserEntity.name
+        authorInfoText.text = UserEntity.desc
     }
     private func addEditNavigationItem() {
         let editButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.edit,

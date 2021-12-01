@@ -9,14 +9,14 @@ import Foundation
 import RxSwift
 
 protocol HomeUseCase {
-    func fetchGamesData() -> Observable<[ResultGame]>
+    func fetchGamesData() -> Observable<[GameModel]>
 }
 class HomeInteractor: HomeUseCase {
     private let gameRepository: GameRepository
     required init(gameRepository: GameRepository) {
         self.gameRepository = gameRepository
     }
-    func fetchGamesData() -> Observable<[ResultGame]> {
+    func fetchGamesData() -> Observable<[GameModel]> {
         return self.gameRepository.fetchGamesData()
     }
 }

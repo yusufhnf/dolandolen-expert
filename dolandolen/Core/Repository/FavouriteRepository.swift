@@ -9,8 +9,7 @@ import Foundation
 import RxSwift
 
 protocol FavouriteRepository: AnyObject {
-    func getFavouritesData() -> Observable<[GameFavoriteModel]>
-    func getFavouriteGameDetail(idGame: Int) -> Observable<GameFavoriteModel>
+    func getFavouritesData() -> Observable<[GameModel]>
     func addFavouriteGame(gameData: GameDetailModel) -> Observable<Bool>
     func isFavoritedGame(idGame: Int) -> Observable<Bool>
     func deleteFavouriteGame(idGame: Int) -> Observable<Bool>

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserModel {
+class UserEntity {
     static let nameKey = "name"
     static let descKey = "desc"
     static var name: String {

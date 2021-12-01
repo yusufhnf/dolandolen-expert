@@ -12,7 +12,7 @@ class SearchPresenter {
     private let disposeBag = DisposeBag()
     private let router = SearchRouter()
     private let searchUseCase: SearchUseCase
-    var gamesData = PublishSubject<[ResultGame]>()
+    var gamesData = PublishSubject<[GameModel]>()
     var errorMessage = PublishSubject<String>()
     var activityIndicator = PublishSubject<Bool>()
     init(searchUseCase: SearchUseCase) {

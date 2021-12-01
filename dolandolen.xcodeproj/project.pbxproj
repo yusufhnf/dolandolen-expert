@@ -10,7 +10,7 @@
 		C177D7071A0BAAB529C07234 /* Pods_dolandolenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F5F62DB10CE7EEAED4523D /* Pods_dolandolenTests.framework */; };
 		DA47BF4CE6A978CB284F751E /* Pods_dolandolen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7742EFB0BCED0646F2C1C681 /* Pods_dolandolen.framework */; };
 		ED0ECB5D26D727BC0053F21A /* EditAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB5C26D727BC0053F21A /* EditAboutViewController.swift */; };
-		ED0ECB6626D77E960053F21A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB6526D77E960053F21A /* UserModel.swift */; };
+		ED0ECB6626D77E960053F21A /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0ECB6526D77E960053F21A /* UserEntity.swift */; };
 		ED133AF72753C05D004FA385 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED133AF62753C05D004FA385 /* HomeInteractor.swift */; };
 		ED133AF92753C1BE004FA385 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED133AF82753C1BE004FA385 /* DetailInteractor.swift */; };
 		ED133AFB2753C2D8004FA385 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED133AFA2753C2D8004FA385 /* SearchInteractor.swift */; };
@@ -23,11 +23,11 @@
 		ED5DE7F926CEAA6600AABD8D /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DE7F726CEAA6600AABD8D /* GameTableViewCell.swift */; };
 		ED5DE7FA26CEAA6600AABD8D /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5DE7F826CEAA6600AABD8D /* GameTableViewCell.xib */; };
 		ED5DE7FE26CEACB100AABD8D /* ActivityIndicator+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DE7FD26CEACB100AABD8D /* ActivityIndicator+Ext.swift */; };
-		ED5DE80026CEAEBB00AABD8D /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DE7FF26CEAEBB00AABD8D /* GameModel.swift */; };
-		ED5DE80226CEAF1800AABD8D /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DE80126CEAF1800AABD8D /* GameDetailModel.swift */; };
+		ED5DE80026CEAEBB00AABD8D /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DE7FF26CEAEBB00AABD8D /* GameResponse.swift */; };
+		ED5DE80226CEAF1800AABD8D /* GameDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DE80126CEAF1800AABD8D /* GameDetailResponse.swift */; };
 		ED6F838026D6FA970023F50E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F837F26D6FA970023F50E /* FavoritesViewController.swift */; };
 		ED6F838726D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED6F838526D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld */; };
-		ED6F838B26D6FEA30023F50E /* GameFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F838A26D6FEA30023F50E /* GameFavoriteModel.swift */; };
+		ED6F838B26D6FEA30023F50E /* GameFavoriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F838A26D6FEA30023F50E /* GameFavoriteEntity.swift */; };
 		ED710B1C274E7A050016F5BA /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED710B1B274E7A050016F5BA /* DateTimeUtils.swift */; };
 		ED710B21274E7B550016F5BA /* GameRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED710B20274E7B550016F5BA /* GameRemoteData.swift */; };
 		ED8C743326C40B810075DE4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C743226C40B810075DE4E /* AppDelegate.swift */; };
@@ -55,6 +55,9 @@
 		EDC4D23B2754A6E900562B7F /* FavouritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4D23A2754A6E900562B7F /* FavouritePresenter.swift */; };
 		EDC4D23E2754F05300562B7F /* FavouriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4D23D2754F05300562B7F /* FavouriteRouter.swift */; };
 		EDC4D2412754F0A500562B7F /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4D2402754F0A500562B7F /* SearchRouter.swift */; };
+		EDE9C6F32757337800161AB4 /* GameMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C6F22757337800161AB4 /* GameMapper.swift */; };
+		EDEFABB6275820D600A924C2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEFABB5275820D600A924C2 /* GameModel.swift */; };
+		EDEFABB8275820EB00A924C2 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEFABB7275820EB00A924C2 /* GameDetailModel.swift */; };
 		F6070141B4CBDDA10BE381F3 /* Pods_dolandolen_dolandolenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE70C17F07D5FD5F7E39D15E /* Pods_dolandolen_dolandolenUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +88,7 @@
 		AE70C17F07D5FD5F7E39D15E /* Pods_dolandolen_dolandolenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dolandolen_dolandolenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD71E173576A527AF5E80822 /* Pods-dolandolen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dolandolen.debug.xcconfig"; path = "Target Support Files/Pods-dolandolen/Pods-dolandolen.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0ECB5C26D727BC0053F21A /* EditAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutViewController.swift; sourceTree = "<group>"; };
-		ED0ECB6526D77E960053F21A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		ED0ECB6526D77E960053F21A /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		ED133AF62753C05D004FA385 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		ED133AF82753C1BE004FA385 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		ED133AFA2753C2D8004FA385 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
@@ -98,11 +101,11 @@
 		ED5DE7F726CEAA6600AABD8D /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		ED5DE7F826CEAA6600AABD8D /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		ED5DE7FD26CEACB100AABD8D /* ActivityIndicator+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Ext.swift"; sourceTree = "<group>"; };
-		ED5DE7FF26CEAEBB00AABD8D /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
-		ED5DE80126CEAF1800AABD8D /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
+		ED5DE7FF26CEAEBB00AABD8D /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
+		ED5DE80126CEAF1800AABD8D /* GameDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailResponse.swift; sourceTree = "<group>"; };
 		ED6F837F26D6FA970023F50E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		ED6F838626D6FBD90023F50E /* GameCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		ED6F838A26D6FEA30023F50E /* GameFavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoriteModel.swift; sourceTree = "<group>"; };
+		ED6F838A26D6FEA30023F50E /* GameFavoriteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoriteEntity.swift; sourceTree = "<group>"; };
 		ED710B1B274E7A050016F5BA /* DateTimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeUtils.swift; sourceTree = "<group>"; };
 		ED710B20274E7B550016F5BA /* GameRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRemoteData.swift; sourceTree = "<group>"; };
 		ED8C742F26C40B810075DE4E /* dolandolen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dolandolen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +139,9 @@
 		EDC4D23A2754A6E900562B7F /* FavouritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePresenter.swift; sourceTree = "<group>"; };
 		EDC4D23D2754F05300562B7F /* FavouriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteRouter.swift; sourceTree = "<group>"; };
 		EDC4D2402754F0A500562B7F /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		EDE9C6F22757337800161AB4 /* GameMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMapper.swift; sourceTree = "<group>"; };
+		EDEFABB5275820D600A924C2 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		EDEFABB7275820EB00A924C2 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		FF0297BAD78D33168C9723B4 /* Pods-dolandolenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dolandolenTests.release.xcconfig"; path = "Target Support Files/Pods-dolandolenTests/Pods-dolandolenTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -401,6 +407,7 @@
 		ED710B1A274E79B60016F5BA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EDE9C6F12757336B00161AB4 /* Mapper */,
 				ED710B1B274E7A050016F5BA /* DateTimeUtils.swift */,
 				EDA13AD92752916E001BFBA6 /* NetworkMonitorUtils.swift */,
 			);
@@ -419,6 +426,7 @@
 		ED710B1E274E7A880016F5BA /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				EDE9C6F5275735EA00161AB4 /* Response */,
 				ED6F838526D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld */,
 				EDA13AC827526404001BFBA6 /* GameLocalData.swift */,
 				EDA13ACD27526547001BFBA6 /* GameLocalDataImpl.swift */,
@@ -429,6 +437,7 @@
 		ED710B1F274E7A8D0016F5BA /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				EDE9C6F4275734F200161AB4 /* Response */,
 				EDA13AD0275269E3001BFBA6 /* Endpoints.swift */,
 				ED710B20274E7B550016F5BA /* GameRemoteData.swift */,
 				EDA13ACB27526539001BFBA6 /* GameRemoteDataImpl.swift */,
@@ -502,10 +511,8 @@
 		EDA13ACF2752661B001BFBA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ED5DE7FF26CEAEBB00AABD8D /* GameModel.swift */,
-				ED5DE80126CEAF1800AABD8D /* GameDetailModel.swift */,
-				ED6F838A26D6FEA30023F50E /* GameFavoriteModel.swift */,
-				ED0ECB6526D77E960053F21A /* UserModel.swift */,
+				EDEFABB5275820D600A924C2 /* GameModel.swift */,
+				EDEFABB7275820EB00A924C2 /* GameDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -544,6 +551,32 @@
 				EDC4D2402754F0A500562B7F /* SearchRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		EDE9C6F12757336B00161AB4 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				EDE9C6F22757337800161AB4 /* GameMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		EDE9C6F4275734F200161AB4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				ED5DE7FF26CEAEBB00AABD8D /* GameResponse.swift */,
+				ED5DE80126CEAF1800AABD8D /* GameDetailResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		EDE9C6F5275735EA00161AB4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				ED6F838A26D6FEA30023F50E /* GameFavoriteEntity.swift */,
+				ED0ECB6526D77E960053F21A /* UserEntity.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		EDF4354A27538836007F6BB2 /* Interactor */ = {
@@ -848,6 +881,7 @@
 				ED133B052753D3DC004FA385 /* DetailPresenter.swift in Sources */,
 				ED133AFD2753C365004FA385 /* FavouriteInteractor.swift in Sources */,
 				ED133AFB2753C2D8004FA385 /* SearchInteractor.swift in Sources */,
+				EDEFABB6275820D600A924C2 /* GameModel.swift in Sources */,
 				ED0ECB5D26D727BC0053F21A /* EditAboutViewController.swift in Sources */,
 				EDA13AC927526404001BFBA6 /* GameLocalData.swift in Sources */,
 				EDBBB5EB27536C58000DA452 /* FavouriteRepositoryImpl.swift in Sources */,
@@ -856,8 +890,8 @@
 				EDBBB5E927536C4B000DA452 /* FavouriteRepository.swift in Sources */,
 				EDC4D23E2754F05300562B7F /* FavouriteRouter.swift in Sources */,
 				ED8C746A26C410440075DE4E /* TabbarViewController.swift in Sources */,
-				ED5DE80226CEAF1800AABD8D /* GameDetailModel.swift in Sources */,
-				ED6F838B26D6FEA30023F50E /* GameFavoriteModel.swift in Sources */,
+				ED5DE80226CEAF1800AABD8D /* GameDetailResponse.swift in Sources */,
+				ED6F838B26D6FEA30023F50E /* GameFavoriteEntity.swift in Sources */,
 				ED5DE7F926CEAA6600AABD8D /* GameTableViewCell.swift in Sources */,
 				EDA13AD827528486001BFBA6 /* CustomError+Ext.swift in Sources */,
 				ED8C743326C40B810075DE4E /* AppDelegate.swift in Sources */,
@@ -874,15 +908,17 @@
 				ED5DE7FE26CEACB100AABD8D /* ActivityIndicator+Ext.swift in Sources */,
 				ED6F838026D6FA970023F50E /* FavoritesViewController.swift in Sources */,
 				EDBBB5E727536C10000DA452 /* GameRepositoryImpl.swift in Sources */,
-				ED0ECB6626D77E960053F21A /* UserModel.swift in Sources */,
+				EDEFABB8275820EB00A924C2 /* GameDetailModel.swift in Sources */,
+				ED0ECB6626D77E960053F21A /* UserEntity.swift in Sources */,
 				ED710B21274E7B550016F5BA /* GameRemoteData.swift in Sources */,
 				ED6F838726D6FBD90023F50E /* GameCoreDataModel.xcdatamodeld in Sources */,
 				EDA13ADA2752916E001BFBA6 /* NetworkMonitorUtils.swift in Sources */,
 				ED8C743D26C40B810075DE4E /* dolandolen.xcdatamodeld in Sources */,
 				ED710B1C274E7A050016F5BA /* DateTimeUtils.swift in Sources */,
 				EDA13AD1275269E3001BFBA6 /* Endpoints.swift in Sources */,
+				EDE9C6F32757337800161AB4 /* GameMapper.swift in Sources */,
 				EDBBB5E527536BFC000DA452 /* GameRepository.swift in Sources */,
-				ED5DE80026CEAEBB00AABD8D /* GameModel.swift in Sources */,
+				ED5DE80026CEAEBB00AABD8D /* GameResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

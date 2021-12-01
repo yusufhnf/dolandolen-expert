@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol GameRepository: AnyObject {
-    func fetchGamesData() -> Observable<[ResultGame]>
-    func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[ResultGame]>
+    func fetchGamesData() -> Observable<[GameModel]>
+    func fetchGamesDataSearch(searchKeyword: String?) -> Observable<[GameModel]>
     func fetchGameDetail(idGame: Int) -> Observable<GameDetailModel>
 }

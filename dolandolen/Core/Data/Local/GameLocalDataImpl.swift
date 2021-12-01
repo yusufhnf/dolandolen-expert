@@ -29,23 +29,24 @@ class GameLocalDataImpl: GameLocalData {
         taskContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         return taskContext
     }
-    func getFavouritesData() -> Observable<[GameFavoriteModel]> {
-        return Observable<[GameFavoriteModel]>.create { observer in
+    func getFavouritesData() -> Observable<[GameFavoriteEntity]> {
+        return Observable<[GameFavoriteEntity]>.create { observer in
             let taskContext = self.newTaskContext()
             taskContext.perform {
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favourites")
                 do {
                     let results = try taskContext.fetch(fetchRequest)
-                    var games: [GameFavoriteModel] = []
+                    var games: [GameFavoriteEntity] = []
                     for result in results {
-                        let gamesData = GameFavoriteModel(idGame: result.value(forKey: "idGame") as? Int32,
-                                                          name: result.value(forKey: "name") as? String,
-                                                          description: result.value(forKey: "desc") as? String,
-                                                          backgroundImage: result.value(forKey: "backgroundImage")
-                                                          as? String,
-                                                          rating: result.value(forKey: "rating") as? Double,
-                                                          ratingTop: result.value(forKey: "ratingTop") as? Int32,
-                                                          releaseDate: result.value(forKey: "releaseDate") as? String)
+                        let gamesData = GameFavoriteEntity(
+                            idGame: result.value(forKey: "idGame") as? Int32,
+                            name: result.value(forKey: "name") as? String,
+                            description: result.value(forKey: "desc") as? String,
+                            backgroundImage: result.value(forKey: "backgroundImage")
+                            as? String,
+                            rating: result.value(forKey: "rating") as? Double,
+                            ratingTop: result.value(forKey: "ratingTop") as? Int32,
+                            releaseDate: result.value(forKey: "releaseDate") as? String)
                         games.append(gamesData)
                     }
                     observer.onNext(games)
@@ -57,8 +58,8 @@ class GameLocalDataImpl: GameLocalData {
             return Disposables.create()
         }
     }
-    func getFavouriteGameDetail(idGame: Int) -> Observable<GameFavoriteModel> {
-        return Observable<GameFavoriteModel>.create { observer in
+    func getFavouriteGameDetail(idGame: Int) -> Observable<GameFavoriteEntity> {
+        return Observable<GameFavoriteEntity>.create { observer in
             let taskContext = self.newTaskContext()
             taskContext.perform {
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favourites")
@@ -66,14 +67,15 @@ class GameLocalDataImpl: GameLocalData {
                 fetchRequest.predicate = NSPredicate(format: "id == \(idGame)")
                 do {
                     if let result = try taskContext.fetch(fetchRequest).first {
-                        let gameData = GameFavoriteModel(idGame: result.value(forKey: "idGame") as? Int32,
-                                                         name: result.value(forKey: "name") as? String,
-                                                         description: result.value(forKey: "desc") as? String,
-                                                         backgroundImage: result.value(forKey: "backgroundImage")
-                                                         as? String,
-                                                         rating: result.value(forKey: "rating") as? Double,
-                                                         ratingTop: result.value(forKey: "ratingTop") as? Int32,
-                                                         releaseDate: result.value(forKey: "releaseDate") as? String)
+                        let gameData = GameFavoriteEntity(
+                            idGame: result.value(forKey: "idGame") as? Int32,
+                            name: result.value(forKey: "name") as? String,
+                            description: result.value(forKey: "desc") as? String,
+                            backgroundImage: result.value(forKey: "backgroundImage")
+                            as? String,
+                            rating: result.value(forKey: "rating") as? Double,
+                            ratingTop: result.value(forKey: "ratingTop") as? Int32,
+                            releaseDate: result.value(forKey: "releaseDate") as? String)
                         observer.onNext(gameData)
                         observer.onCompleted()
                     }

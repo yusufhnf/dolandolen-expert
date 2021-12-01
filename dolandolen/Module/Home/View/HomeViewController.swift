@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     var timer: Timer?
     var homePresenter: HomePresenter?
     var disposeBag = DisposeBag()
-    var gameResult = [ResultGame]()
+    var gameResult = [GameModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(gameTable)
@@ -88,10 +88,9 @@ extension HomeViewController: UITableViewDataSource {
         let gameCell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
         as? GameTableViewCell ?? GameTableViewCell()
         let gameData = self.gameResult[indexPath.row]
-        let formatter = Formatter()
         gameCell.gameTitleText.text = gameData.name
         gameCell.gameSubtitleText.text = "⭐️ \(gameData.rating)"
-        gameCell.gameReleaseText.text = "🗓 \(formatter.dateFormatter(dateValue: gameData.released))"
+        gameCell.gameReleaseText.text = "🗓 \(gameData.releasedDateText)"
         gameCell.gameImageView.kf.setImage(with: URL(string: gameData.backgroundImage ?? ""),
                                            placeholder: UIImage(named: "placeholder"))
         return gameCell

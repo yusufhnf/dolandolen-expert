@@ -65,9 +65,9 @@ class EditAboutViewController: UIViewController {
         descField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     override func viewWillAppear(_ animated: Bool) {
-        UserModel.synchronize()
-        nameField.text = UserModel.name
-        descField.text = UserModel.desc
+        UserEntity.synchronize()
+        nameField.text = UserEntity.name
+        descField.text = UserEntity.desc
     }
     override func viewWillLayoutSubviews() {
         addSaveNavigationItem()
@@ -100,8 +100,8 @@ class EditAboutViewController: UIViewController {
         self.dismiss(animated: true)
     }
     private func saveEdit(_ name: String, _ desc: String) {
-        UserModel.name = name
-        UserModel.desc = desc
+        UserEntity.name = name
+        UserEntity.desc = desc
         self.view.makeToast("Berhasil tersimpan")
     }
 }
