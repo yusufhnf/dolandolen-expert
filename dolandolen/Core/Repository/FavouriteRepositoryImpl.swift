@@ -17,7 +17,7 @@ class FavouriteRepositoryImpl: FavouriteRepository {
         return gameLocalData.getFavouritesData()
             .map {GameMapper.mapGameEntitiesToDomains(input: $0)}
     }
-    func addFavouriteGame(gameData: GameDetailModel) -> Observable<Bool> {
+    func addFavouriteGame(gameData: GameFavoriteEntity) -> Observable<Bool> {
         return gameLocalData.addFavouriteGame(gameData: gameData)
     }
     func isFavoritedGame(idGame: Int) -> Observable<Bool> {

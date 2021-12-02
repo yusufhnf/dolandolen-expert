@@ -32,7 +32,7 @@ class DetailPresenter {
                 self.activityIndicator.onNext(false)
             }.disposed(by: disposeBag)
     }
-    func addGameToFavourite(gameData: GameDetailModel) {
+    func addGameToFavourite(gameData: GameFavoriteEntity) {
         self.activityIndicator.onNext(true)
         detailUseCase.addFavouriteGame(gameData: gameData)
             .observe(on: MainScheduler.instance)

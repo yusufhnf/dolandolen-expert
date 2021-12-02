@@ -86,7 +86,7 @@ class GameLocalDataImpl: GameLocalData {
             return Disposables.create()
         }
     }
-    func addFavouriteGame(gameData: GameDetailModel) -> Observable<Bool> {
+    func addFavouriteGame(gameData: GameFavoriteEntity) -> Observable<Bool> {
         return Observable<Bool>.create { observer in
             let taskContext = self.newTaskContext()
             taskContext.performAndWait {
@@ -96,8 +96,8 @@ class GameLocalDataImpl: GameLocalData {
                     game.setValue(gameData.name, forKey: "name")
                     game.setValue(gameData.rating, forKey: "rating")
                     game.setValue(gameData.backgroundImage, forKey: "backgroundImage")
-                    game.setValue(gameData.released, forKey: "releaseDate")
-                    game.setValue(gameData.gameDetailModelDescription, forKey: "desc")
+                    game.setValue(gameData.releaseDate, forKey: "releaseDate")
+                    game.setValue(gameData.description, forKey: "desc")
                     game.setValue(gameData.ratingTop, forKey: "ratingTop")
                     do {
                         try taskContext.save()

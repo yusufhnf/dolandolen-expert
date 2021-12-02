@@ -38,7 +38,14 @@ class DetailViewController: UIViewController {
     }
     @objc private func onButtonFavClicked() {
         if let gameData = self.gameDetailResult {
-            detailPresenter?.addGameToFavourite(gameData: gameData)
+            detailPresenter?.addGameToFavourite(gameData: GameFavoriteEntity(
+                idGame: Int32(gameData.idGame),
+                name: gameData.name,
+                description: gameData.gameDetailModelDescription,
+                backgroundImage: gameData.backgroundImage,
+                rating: gameData.rating,
+                ratingTop: Int32(gameData.ratingTop ?? 0),
+                releaseDate: gameData.released))
         }
     }
     @objc private func onButtonUnfavouriteClicked() {
