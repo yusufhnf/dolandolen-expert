@@ -7,15 +7,16 @@
 
 import UIKit
 import Toast_Swift
+import Core
 
 class EditAboutViewController: UIViewController {
     lazy var nameLabel: UILabel = {
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.textColor = UIColor(red: 130/255, green: 131/255, blue: 134/255, alpha: 1)
-            label.font = .systemFont(ofSize: 17, weight: .medium)
-            label.text = "Nama"
-            return label
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor(red: 130/255, green: 131/255, blue: 134/255, alpha: 1)
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.text = "name_label".localized()
+        return label
     }()
     private lazy var nameField: UITextField = {
         let textField = UITextField()
@@ -23,16 +24,16 @@ class EditAboutViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.textContentType = .name
         textField.autocapitalizationType = .none
-        textField.placeholder = "Masukkan Nama"
+        textField.placeholder = "name_hint".localized()
         return textField
     }()
     lazy var descLabel: UILabel = {
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.textColor = UIColor(red: 130/255, green: 131/255, blue: 134/255, alpha: 1)
-            label.font = .systemFont(ofSize: 17, weight: .medium)
-            label.text = "Deskripsi"
-            return label
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor(red: 130/255, green: 131/255, blue: 134/255, alpha: 1)
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.text = "description_label".localized()
+        return label
     }()
     private lazy var descField: UITextField = {
         let textField = UITextField()
@@ -40,12 +41,12 @@ class EditAboutViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.textContentType = .name
         textField.autocapitalizationType = .none
-        textField.placeholder = "Masukkan Deskripsi"
+        textField.placeholder = "description_hint".localized()
         return textField
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Edit"
+        self.navigationItem.title = "edit_label".localized()
         view.backgroundColor = .white
         view.addSubview(nameField)
         view.addSubview(descField)
@@ -65,9 +66,9 @@ class EditAboutViewController: UIViewController {
         descField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     override func viewWillAppear(_ animated: Bool) {
-        UserEntity.synchronize()
-        nameField.text = UserEntity.name
-        descField.text = UserEntity.desc
+        UserProfile.synchronize()
+        nameField.text = UserProfile.name
+        descField.text = UserProfile.desc
     }
     override func viewWillLayoutSubviews() {
         addSaveNavigationItem()
@@ -76,19 +77,19 @@ class EditAboutViewController: UIViewController {
         let editButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save,
                                              target: self, action: #selector(confirmEdit(_:)))
         let cancelButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel,
-                                             target: self, action: #selector(cancelEdit(_:)))
+                                               target: self, action: #selector(cancelEdit(_:)))
         navigationItem.rightBarButtonItem = editButtonItem
         navigationItem.leftBarButtonItem = cancelButtonItem
     }
     private func emptyText(field: String) {
-        self.view.makeToast("\(field) tidak boleh kosong")
+        self.view.makeToast("\(field) \("field_empty".localized())")
     }
     @objc func confirmEdit(_ sender: UIBarButtonItem!) {
         if let name = nameField.text, let desc = descField.text {
             if name.isEmpty {
-                emptyText(field: "Nama")
+                emptyText(field: "name_label".localized())
             } else if desc.isEmpty {
-                emptyText(field: "Deskripsi")
+                emptyText(field: "description_label".localized())
             } else {
                 saveEdit(name, desc)
                 DataManager.shared.aboutVC.loadUserModel()
@@ -100,8 +101,8 @@ class EditAboutViewController: UIViewController {
         self.dismiss(animated: true)
     }
     private func saveEdit(_ name: String, _ desc: String) {
-        UserEntity.name = name
-        UserEntity.desc = desc
-        self.view.makeToast("Berhasil tersimpan")
+        UserProfile.name = name
+        UserProfile.desc = desc
+        self.view.makeToast("success_save".localized())
     }
 }

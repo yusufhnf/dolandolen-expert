@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Core
 
 class AboutViewController: UIViewController {
     private lazy var accountImage: UIImageView = {
@@ -55,7 +56,7 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataManager.shared.aboutVC = self
-        self.navigationItem.title = "Tentang"
+        self.navigationItem.title = "about_label".localized()
     }
     override func viewWillLayoutSubviews() {
         addEditNavigationItem()
@@ -65,9 +66,9 @@ class AboutViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
     func loadUserModel() {
-        UserEntity.synchronize()
-        authorNameText.text = UserEntity.name
-        authorInfoText.text = UserEntity.desc
+        UserProfile.synchronize()
+        authorNameText.text = UserProfile.name
+        authorInfoText.text = UserProfile.desc
     }
     private func addEditNavigationItem() {
         let editButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.edit,

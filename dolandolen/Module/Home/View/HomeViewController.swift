@@ -8,35 +8,38 @@
 import UIKit
 import Kingfisher
 import RxSwift
+import Game
+import Core
+import Common
 
 class HomeViewController: UIViewController {
     private let gameTable = UITableView()
     var timer: Timer?
-    var homePresenter: HomePresenter?
     var disposeBag = DisposeBag()
     var gameResult = [GameModel]()
+    var presenter: ListingPresenter < String,
+                                      GameModel,
+                                      Interactor < String, [GameModel], GameRepository < GameRemoteDataSource, GameTransformer >>>?
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(gameTable)
         setupTableView()
         setupNavigationBar()
-        if NetworkMonitorUtils.shared.isConnected {
-            print("Connected")
-            getGameData()
-            homePresenter?.fetchGame()
-        } else {
-            print("Not Connected")
-            showConnectionAlert()
-        }
+        bindSubcriber()
+        getGameData(name: nil)
     }
-    private func getGameData() {
-        homePresenter?.gamesData.subscribe(
+    
+    private func getGameData(name: String? = nil) {
+        presenter?.getList(request: name)
+    }
+    
+    private func bindSubcriber() {
+        presenter?.list.subscribe(
             onNext: { games in
                 self.gameResult = games
                 self.gameTable.reloadData()
             }
         ).disposed(by: disposeBag)
-        homePresenter?.activityIndicator.subscribe(
+        presenter?.activityIndicatorState.subscribe(
             onNext: { status in
                 if status {
                     self.showActivityIndicator()
@@ -45,19 +48,14 @@ class HomeViewController: UIViewController {
                 }
             }).disposed(by: disposeBag)
     }
-    func showConnectionAlert() {
-        let alert = UIAlertController(title: "Koneksi Internet Bermasalah",
-                                      message: "Pastikan perangkatmu tersambung ke Internet", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            print("oke")
-        }))
-        self.present(alert, animated: true)
-    }
+    
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "DolanDolen"
+        self.navigationItem.title = "app_title".localized()
     }
+    
     private func setupTableView() {
+        view.addSubview(gameTable)
         gameTable.dataSource = self
         gameTable.delegate = self
         gameTable.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
@@ -67,11 +65,7 @@ class HomeViewController: UIViewController {
         gameTable.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         gameTable.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
-    private func updateTableUI() {
-        DispatchQueue.main.async {
-            self.gameTable.reloadData()
-        }
-    }
+    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
@@ -97,7 +91,8 @@ extension HomeViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        homePresenter?.navigateToDetail(navigationController: self.navigationController,
-                                        idGame: self.gameResult[indexPath.row].idGame)
+        
+        let detailViewController = HomeRouter.pushToDetailView(idGame: gameResult[indexPath.row].idGame)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

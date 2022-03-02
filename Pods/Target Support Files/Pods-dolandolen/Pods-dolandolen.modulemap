@@ -1,0 +1,6 @@
+framework module Pods_dolandolen {
+  umbrella header "Pods-dolandolen-umbrella.h"
+
+  export *
+  module * { export * }
+}

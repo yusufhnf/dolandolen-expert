@@ -6,16 +6,55 @@
 //
 
 import Foundation
-import UIKit
+import Game
+import Core
+import GameFavourite
 
 class SearchRouter {
-    let scene = UIApplication.shared.connectedScenes.first
-    func detailRoute(idGame: Int) -> DetailViewController {
-        var detailVC: DetailViewController?
-        if let sceneDelegate: SceneDelegate = (scene?.delegate as? SceneDelegate) {
-            detailVC = sceneDelegate.container.resolve(DetailViewController.self)
-        }
-        detailVC?.idGame = idGame
-        return detailVC ?? DetailViewController()
+    static func pushToDetailView (idGame: Int) -> DetailViewController {
+        let gameDetailVC = DetailViewController()
+        
+        let gameDetailUseCase: Interactor<
+            String,
+            GameDetailModel,
+            GameDetailRepository<
+                GameDetailRemoteDataSource,
+                GameDetailTransformer>
+        > = Injection.init().provideGameDetail()
+        
+        let addFavoriteUseCase: Interactor<
+            GameDetailModel,
+            Bool,
+            AddFavouriteGameRepository<
+                GameFavouriteLocalData,
+                AddGameFavouriteTransformer>
+        > = Injection.init().provideAddFavoriteGames()
+        
+        let deleteFavoriteUseCase: Interactor<
+            String,
+            Bool,
+            DeleteFavouriteGameRepository<
+                GameFavouriteLocalData
+            >
+        > = Injection.init().provideDeleteFavoriteGames()
+        
+        let statusFavoriteUseCase: Interactor<
+            String,
+            Bool,
+            StatusFavouriteGameRepository<
+                GameFavouriteLocalData
+            >
+        > = Injection.init().provideStatusFavoriteGames()
+        
+        let presenter = GameDetailPresenter(
+            gameDetailUseCase: gameDetailUseCase,
+            addGameFavouriteUseCase: addFavoriteUseCase,
+            removeGameFavouriteUseCase: deleteFavoriteUseCase,
+            statusGameFavouriteUseCase: statusFavoriteUseCase
+        )
+        
+        gameDetailVC.idGame = idGame
+        gameDetailVC.presenter = presenter
+        return gameDetailVC
     }
 }

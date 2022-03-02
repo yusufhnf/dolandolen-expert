@@ -1,0 +1,6 @@
+framework module Pods_dolandolen_dolandolenUITests {
+  umbrella header "Pods-dolandolen-dolandolenUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
