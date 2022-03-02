@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode13 
+xcode_project: dolandolen.xcodeproj 
+xcode_scheme: dolandolen
+xcode_destination: platform=iOS Simulator,OS=14.0,name=iPhone 11 Pro
