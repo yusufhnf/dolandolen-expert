@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.4.4)
+  - Core (1.0.1):
+    - RxSwift
   - Kingfisher (7.1.1)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
@@ -12,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
+  - Core
   - Kingfisher (~> 7.0)
   - RxCocoa (= 6.2.0)
   - RxSwift (= 6.2.0)
@@ -19,6 +22,8 @@ DEPENDENCIES:
   - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
+  https://github.com/yusufhnf/DolanDolen-CorePodSpecs.git:
+    - Core
   trunk:
     - Alamofire
     - Kingfisher
@@ -30,6 +35,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Core: 2c84ca36be286c95e721ed20605c9cf2cbd41ae6
   Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
@@ -37,6 +43,6 @@ SPEC CHECKSUMS:
   SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: ff0874b5b925697a2b6fcad08e7eca33b2756ff9
+PODFILE CHECKSUM: 7732360aa6f97a94cbdbe628be6b5cdad83f0dd6
 
 COCOAPODS: 1.11.2

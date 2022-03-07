@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
-
+source 'https://github.com/yusufhnf/DolanDolen-CorePodSpecs'
 target 'dolandolen' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
@@ -15,9 +15,7 @@ target 'dolandolen' do
     pod 'RxCocoa', '6.2.0'
     pod 'SwiftLint'
     
-    target 'Core' do
-      project '../Core/Core'
-    end
+    pod 'Core'
 
     target 'Game' do
       project '../Game/Game'
